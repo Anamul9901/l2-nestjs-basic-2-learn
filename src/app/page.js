@@ -19,7 +19,8 @@ const HomePage = async () => {
     },
   });
   const shoes = await res.json();
-  console.log(shoes);
+
+  throw new Error("Error from homePage");
   return (
     <div className="max-w-7xl mx-auto w-full">
       <h1 className="text-4xl font-semibold text-center">
@@ -54,7 +55,10 @@ const HomePage = async () => {
       </div>
 
       <div className="text-center">
-        <Link href="/all-shoes" className="rounded-lg font-medium bg-blue-500 border border-blue-500 text-white px-3 py-1">
+        <Link
+          href="/all-shoes"
+          className="rounded-lg font-medium bg-blue-500 border border-blue-500 text-white px-3 py-1"
+        >
           Details
         </Link>
       </div>
