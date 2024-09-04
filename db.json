@@ -1,0 +1,40 @@
+{
+  "shoes": [
+    {
+      "id": 1,
+      "title": "The Grand Spectacle",
+      "description": "A breathtaking show featuring acrobatics, music, and visual effects.",
+      "price": 59.99
+    },
+    {
+      "id": 2,
+      "title": "Comedy Night Live",
+      "description": "An evening of laughter with top comedians from around the world.",
+      "price": 39.99
+    },
+    {
+      "id": 3,
+      "title": "Mystery Theater",
+      "description": "A thrilling mystery play that keeps the audience on the edge of their seats.",
+      "price": 49.99
+    },
+    {
+      "id": 4,
+      "title": "Magic and Illusions",
+      "description": "A mesmerizing magic show that defies reality and logic.",
+      "price": 45.99
+    },
+    {
+      "id": 5,
+      "title": "Broadway Classics",
+      "description": "A musical journey through some of Broadway's greatest hits.",
+      "price": 64.99
+    },
+    {
+      "id": 6,
+      "title": "Cultural Dance Fest",
+      "description": "A celebration of diverse dance styles from around the world.",
+      "price": 34.99
+    }
+  ]
+}

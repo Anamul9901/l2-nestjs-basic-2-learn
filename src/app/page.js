@@ -1,17 +1,45 @@
-
 export const metadata = {
-  title: 'Home Page',
-  description: "This is home page"
-}
+  title: "Home Page",
+  description: "This is home page",
+};
 
-const page = () => {
+const HomePage = async () => {
+  // nextJs e data fetch korar contition:
+  // 1: server component hote hobe. {mane upre "use client" use kora jabe nah}
+  // 2: async component hote hobe
+  const res = await fetch("http://localhost:5000/shoes");
+  const shoes = await res.json();
+  console.log(shoes);
   return (
-    <div>
+    <div className="max-w-7xl mx-auto w-full">
       <h1 className="text-4xl font-semibold text-center">
-        Welcome to Next.Js page
+        Welcome to Next.Js HomePage
       </h1>
+      <div className="flex justify-between p-5">
+        {shoes.slice(0, 3).map((show) => (
+          <div key={show.id} className="card bg-base-100 w-80 shadow-xl">
+            <figure>
+              <img
+                src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
+                alt="Shoes"
+              />
+            </figure>
+            <div className="card-body">
+              <h2 className="card-title">
+                Shoes!
+                <div className="badge badge-secondary">NEW</div>
+              </h2>
+              <p>If a dog chews shoes whose shoes does he choose?</p>
+              <div className="card-actions justify-end">
+                <div className="badge badge-outline">Fashion</div>
+                <div className="badge badge-outline">Products</div>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
     </div>
   );
 };
 
-export default page;
+export default HomePage;
