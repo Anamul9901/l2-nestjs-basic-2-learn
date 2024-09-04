@@ -7,7 +7,9 @@ const HomePage = async () => {
   // nextJs e data fetch korar contition:
   // 1: server component hote hobe. {mane upre "use client" use kora jabe nah}
   // 2: async component hote hobe
-  const res = await fetch("http://localhost:5000/shoes");
+  const res = await fetch("http://localhost:5000/shoes", {
+    cache: "force-cache", // force-cache dele er all data fase load er jonno cache er modde store kore rakbe. aita na dleo auto by-default force-cache hoye thakbe
+  });
   const shoes = await res.json();
   console.log(shoes);
   return (
@@ -16,8 +18,8 @@ const HomePage = async () => {
         Welcome to Next.Js HomePage
       </h1>
       <div className="flex justify-between p-5">
-        {shoes.slice(0, 3).map((show) => (
-          <div key={show.id} className="card bg-base-100 w-80 shadow-xl">
+        {shoes.slice(0, 3).map((shoe) => (
+          <div key={shoe.id} className="card bg-base-100 w-80 shadow-xl">
             <figure>
               <img
                 src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
@@ -26,13 +28,17 @@ const HomePage = async () => {
             </figure>
             <div className="card-body">
               <h2 className="card-title">
-                Shoes!
-                <div className="badge badge-secondary">NEW</div>
+                {shoe.title}
+                <div className="badge badge-secondary">{shoe.price}</div>
               </h2>
-              <p>If a dog chews shoes whose shoes does he choose?</p>
+              <p>{shoe.description}</p>
               <div className="card-actions justify-end">
-                <div className="badge badge-outline">Fashion</div>
-                <div className="badge badge-outline">Products</div>
+                <button className="rounded-lg font-medium bg-transparent border border-blue-500 text-blue-500 px-3 py-1">
+                  Buy Now
+                </button>
+                <button className="rounded-lg font-medium bg-transparent border border-blue-500 text-blue-500 px-3 py-1">
+                  Details
+                </button>
               </div>
             </div>
           </div>
