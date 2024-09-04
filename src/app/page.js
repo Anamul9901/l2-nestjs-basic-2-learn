@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export const metadata = {
   title: "Home Page",
   description: "This is home page",
@@ -13,7 +15,7 @@ const HomePage = async () => {
     // next.js e sobkisu cache hoy thake. tai server e data change korle o oita change hoy nah, karon data stasick hoye thake.
     //tai next er vetor revalidate use kore bole dua jai je koto second por por data re-cache hobe
     next: {
-      revalidate: 5,
+      revalidate: 30, // standard time 30s
     },
   });
   const shoes = await res.json();
@@ -49,6 +51,12 @@ const HomePage = async () => {
             </div>
           </div>
         ))}
+      </div>
+
+      <div className="text-center">
+        <Link href="/all-shoes" className="rounded-lg font-medium bg-blue-500 border border-blue-500 text-white px-3 py-1">
+          Details
+        </Link>
       </div>
     </div>
   );
