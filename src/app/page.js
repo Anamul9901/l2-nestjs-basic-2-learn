@@ -8,7 +8,13 @@ const HomePage = async () => {
   // 1: server component hote hobe. {mane upre "use client" use kora jabe nah}
   // 2: async component hote hobe
   const res = await fetch("http://localhost:5000/shoes", {
-    cache: "force-cache", // force-cache dele er all data fase load er jonno cache er modde store kore rakbe. aita na dleo auto by-default force-cache hoye thakbe
+    // cache: "force-cache", // force-cache dele er all data fase load er jonno cache er modde store kore rakbe. aita na dleo auto by-default force-cache hoye thakbe
+
+    // next.js e sobkisu cache hoy thake. tai server e data change korle o oita change hoy nah, karon data stasick hoye thake.
+    //tai next er vetor revalidate use kore bole dua jai je koto second por por data re-cache hobe
+    next: {
+      revalidate: 5,
+    },
   });
   const shoes = await res.json();
   console.log(shoes);

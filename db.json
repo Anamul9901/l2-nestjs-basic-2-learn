@@ -4,19 +4,19 @@
       "id": 1,
       "title": "The Grand Spectacle",
       "description": "A breathtaking show featuring acrobatics, music, and visual effects.",
-      "price": 59.00
+      "price": 59.11
     },
     {
       "id": 2,
       "title": "Comedy Night Live",
       "description": "An evening of laughter with top comedians from around the world.",
-      "price": 39.99
+      "price": 39.11
     },
     {
       "id": 3,
       "title": "Mystery Theater",
       "description": "A thrilling mystery play that keeps the audience on the edge of their seats.",
-      "price": 49.99
+      "price": 49.01
     },
     {
       "id": 4,
